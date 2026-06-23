@@ -38,7 +38,7 @@ The project uses a three-layer data warehouse architecture:
 | Silver | Cleans, standardises and prepares the data                    |
 | Gold   | Provides business-ready fact and dimension views for analysis |
 
-![Data Architecture](docs/data_architecture.png)
+![Data Architecture](docs/Data%20Flow%20Diagram.png)
 
 ---
 
@@ -77,7 +77,7 @@ datasets/source_erp/
 
 The CRM and ERP datasets are integrated through customer, product and category keys. This allows the final Gold layer to combine transaction-level sales data with customer demographics, location information and product category details.
 
-![Integration Model](docs/integration_model.png)
+![Integration Model](docs/Integration%20Model.png)
 
 ---
 
@@ -165,7 +165,7 @@ The data is modelled using a star schema with one fact view and two dimension vi
 | `gold.dim_customers` | Dimension view | Customer details, demographics and location        |
 | `gold.dim_product`   | Dimension view | Product details, categories and product attributes |
 
-![Star Schema](docs/star_schema_model.png)
+![Star Schema](docs/Star%20Schema.png)
 
 The Gold layer is created using:
 
@@ -261,9 +261,9 @@ sql-data-warehouse-sales-analytics/
 ├── README.md
 │
 ├── docs/
-│   ├── data_architecture.png
-│   ├── integration_model.png
-│   └── star_schema_model.png
+│   ├── Data Flow Diagram.png
+│   ├── Integration Model.png
+│   └── Star Schema.png
 │
 ├── datasets/
 │   ├── source_crm/
@@ -285,13 +285,10 @@ sql-data-warehouse-sales-analytics/
 │   ├── 06_create_gold_views.sql
 │   └── 07_business_analysis_queries.sql
 │
-├── reports/
-│   ├── product_performance_report.sql
-│   ├── sales_trend_analysis.sql
-│   └── customer_analysis.sql
-│
-└── assets/
-    └── portfolio-preview.png
+└── reports/
+    ├── customer_analysis.sql
+    ├── product_performance_report.sql
+    └── sales_trend_analysis.sql
 ```
 
 ---
@@ -329,13 +326,13 @@ with the actual location of the project folder on your machine.
 Run the scripts in this order:
 
 ```text
-01_create_database.sql
-02_create_bronze_tables.sql
-03_load_bronze_data.sql
-04_create_silver_tables.sql
-05_transform_bronze_to_silver.sql
-06_create_gold_views.sql
-07_business_analysis_queries.sql
+scripts/01_create_database.sql
+scripts/02_create_bronze_tables.sql
+scripts/03_load_bronze_data.sql
+scripts/04_create_silver_tables.sql
+scripts/05_transform_bronze_to_silver.sql
+scripts/06_create_gold_views.sql
+scripts/07_business_analysis_queries.sql
 ```
 
 ### 5. Run the report scripts
